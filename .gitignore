@@ -1,10 +1,19 @@
 target/
-secrets/
 !**/src/main/**/target/
 !**/src/test/**/target/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+secrets/
 
-# Buildtools
-.mvn/
+### Build tools wrappers ###
+#.mvn/
 .gradle/
  
 ### STS ###
@@ -28,13 +37,10 @@ secrets/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
  
 ### VS Code ###
 .vscode/
- 
+
+### Misc ###
 iso
- 
 .localstack
