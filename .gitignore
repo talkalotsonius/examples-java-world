@@ -17,16 +17,16 @@ secrets/
 .gradle/
  
 ### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+.apt_generated/
+.classpath/
+.factorypath/
+.project/
+.settings/
+.springBeans/
+.sts4-cache/
  
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -42,5 +42,6 @@ secrets/
 .vscode/
 
 ### Misc ###
-iso
-.localstack
+iso/
+*.iso
+.localstack/
