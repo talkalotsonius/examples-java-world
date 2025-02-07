@@ -15,6 +15,9 @@ secrets/
 ### Build tools wrappers ###
 #.mvn/
 .gradle/
+
+### Kotlin compiler ###
+.kotlin/
  
 ### STS ###
 .apt_generated/
