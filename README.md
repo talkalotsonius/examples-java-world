@@ -8,7 +8,7 @@ Last successfully built using maven Version `3.9.9`, or gradle Version `8.12.1`.
 * [java-karate-tests](./java-karate-tests/README.md), using maven
 * [java-spring-boot-annotations](./java-spring-boot-annotations/README.md), using maven
 * [kotlin-null-safety](./kotlin-null-safety/README.md), using gradle
-* [spring-boot-boilerplate](kotlin-spring-boot-api-boilerplate/README.md), using maven
+* [kotlin-spring-boot-api-boilerplate](kotlin-spring-boot-api-boilerplate/README.md), using gradle
 * [spring-boot-feature](./spring-boot-feature/README.md), using gradle
 * [spring-boot-inventory](./spring-boot-inventory/README.md), using gradle
 * [spring-boot-kotlin](./spring-boot-kotlin/README.md), using gradle
