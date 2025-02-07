@@ -17,6 +17,13 @@ Last successfully built using maven Version `3.9.9`, or gradle Version `8.12.1`.
 * [spring-boot-schedule](./spring-boot-schedule/README.md), using gradle
 * [spring-boot-weather](./spring-boot-weather/README.md), using gradle
 
+## General installation instructions
+### Requirements
+* Docker
+* renovate bot
+* maven and gradle
+
+
 ## Reference Documentation
 For further reference, please consider the following sections:
 
