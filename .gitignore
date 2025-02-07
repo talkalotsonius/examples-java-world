@@ -18,7 +18,7 @@ secrets/
 
 ### Build tools wrappers ###
 .mvn/
-!maven-wrapper.properties
+!**/maven-wrapper.properties
 .gradle/
 
 ### Kotlin compiler ###
