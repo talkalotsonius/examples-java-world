@@ -11,6 +11,10 @@ bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 secrets/
+# Compiled class files
+*.class
+# Log files
+*.log
 
 ### Build tools wrappers ###
 .mvn/
@@ -49,3 +53,11 @@ secrets/
 iso/
 *.iso
 .localstack/
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
