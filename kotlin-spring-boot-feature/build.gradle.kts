@@ -9,7 +9,7 @@ plugins {
     //id("org.jlleitschuh.gradle.ktlint")
 }
 
-group = "com.example"
+group = "com.examples"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_21
 

@@ -1,4 +1,4 @@
-rootProject.name = "kotlin-spring-boot-feature"
+rootProject.name = "kotlin-spring-boot-feature-testing-restassured"
 
 plugins {
     // See https://jmfayard.github.io/refreshVersions
