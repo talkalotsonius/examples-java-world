@@ -9,7 +9,7 @@ Feature: Just a random feature file containing some examples for API testing in 
 	* path resource[resourceObjectPath].endpoint
 	## Generate header
 	* def headerGeneratorClass = Java.type(javaClassPathHeaderGenerator);
-	* def headerGenerator = new headerGeneratorClass(true, resource[resourceObjectPath].apiKey, 'requestHeaders.json');
+	* def headerGenerator = new headerGeneratorClass('requestHeaders.json');
 	* def headerAsString = headerGenerator.getJsonObjectString('');
 	* configure headers = convertToJSObject(headerAsString);
 	##
@@ -26,5 +26,6 @@ Feature: Just a random feature file containing some examples for API testing in 
 		Then status 200
 
 
-	#Scenario: Validate HTTP responses
-	#* call read(httpStatusValidationFeature) { resourceObjectPath: "#(resourceObjectPath)",  headerAsString: "#(headerAsString)"}
+	Scenario: Validate
+	* call read(httpStatusValidationFeature) { resourceObjectPath: "#(resourceObjectPath)",  headerAsString: "#(headerAsString)"}
+	* call read(multipleFeature) { resourceObjectPath: "#(resourceObjectPath)",  headerAsString: "#(headerAsString)"}
