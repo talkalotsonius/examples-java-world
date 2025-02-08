@@ -23,6 +23,7 @@ dependencies {
 	implementation(Spring.boot.data.jpa)
 	implementation(Spring.boot.web)
 	implementation(Spring.boot.security)
+	implementation ("jakarta.validation:jakarta.validation-api:3.1.1")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin:_")
 	implementation("org.jetbrains.kotlin:kotlin-reflect:_")
 	implementation(Kotlin.stdlib.jdk8)
