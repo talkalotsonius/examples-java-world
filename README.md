@@ -21,9 +21,11 @@ Last successfully built using maven Version `3.9.9`, or gradle Version `8.12.1`.
 ### Requirements
 * Java 21
 * Kotlin 2.1 and above
+* maven and gradle
+
+### Optional requirements
 * Docker
 * renovate bot
-* maven and gradle
 
 ## Reference Documentation
 For further reference, please consider the following sections:
