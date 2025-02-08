@@ -29,8 +29,8 @@ class CsvFileSource(private val fileName: String) {
                 .readValues<T>(csvFile)
                 .readAll()
         } catch (e: Exception) {
-            logger.error("Error occurred while loading object list from file $fileName", e);
-            Collections.emptyList();
+            logger.error("Error occurred while loading object list from file $fileName", e)
+            Collections.emptyList()
         }
     }
 }

@@ -14,7 +14,6 @@ class CarService(private val carRepository: CarRepository) {
 
     fun getAllCars(): List<Car> {
         logger.info("Fetch from repository: " + carRepository.findAll())
-        //TODO call the getDiscountPrice() function once
         val carList = carRepository.findAll().map {
             Car(
                 id = it.id,
