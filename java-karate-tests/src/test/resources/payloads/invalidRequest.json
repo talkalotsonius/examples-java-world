@@ -1,0 +1,8 @@
+{
+  "datapoint1": "string",
+  "datapoint2": 12,
+  "datapoint3": 3.14,
+  "datapoint4": 9.81,
+  "datapoint5": true,
+  "datapoint6": false
+}
