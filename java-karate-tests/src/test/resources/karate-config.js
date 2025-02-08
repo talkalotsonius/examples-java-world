@@ -30,6 +30,9 @@ function fn() {
     };
     resource = calculateNotAllowedHttpMethods(resource);
 
+    let healthCheckRunner = read(`${PREFIX_COMMON_SCRIPTS}/execution/healthCheckRunner.js`);
+    healthCheckRunner(env, basePath);
+
     return {
         resource: resource,
     };

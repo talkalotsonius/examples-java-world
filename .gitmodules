@@ -1,0 +1,4 @@
+[submodule "karate-common"]
+	path = java-karate-tests/src/test/resources/common
+	url = https://github.com/talkalotsonius/examples-java-world-karate-common.git
+	branch = master
