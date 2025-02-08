@@ -3,25 +3,24 @@ package com.examples.api.integration
 import com.examples.api.controller.model.EmployeeDto
 import com.examples.api.service.EmployeeService
 import com.examples.api.utils.faker.EmployeeFaker
+
 import com.nhaarman.mockitokotlin2.doReturn
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertEquals
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.test.mock.mockito.MockBean
-import org.springframework.boot.test.web.client.TestRestTemplate
-import org.springframework.boot.web.server.LocalServerPort
 import org.springframework.http.HttpMethod
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpStatus
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.boot.test.web.client.TestRestTemplate
+import org.springframework.boot.test.web.server.LocalServerPort
 import org.springframework.test.context.ActiveProfiles
+import org.springframework.test.context.bean.override.mockito.MockitoBean
+
 import java.net.URI
 
-/**
- * TODO: Add tests for POST, PUT and DELETE controllers
- */
 @ActiveProfiles("test")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class EmployeeHttpRequestTest {
@@ -31,7 +30,7 @@ class EmployeeHttpRequestTest {
     @Autowired
     private lateinit var testRestTemplate: TestRestTemplate
 
-    @MockBean
+    @MockitoBean
     private lateinit var employeeService: EmployeeService
 
     private val id = Math.random().toLong()

@@ -16,13 +16,13 @@ class SecurityConfiguration : WebSecurityConfigurerAdapter() {
     @Throws(Exception::class)
     override fun configure(auth: AuthenticationManagerBuilder) {
         auth.inMemoryAuthentication()
-                .withUser("user")
-                .password("user")
-                .roles("USER")
-                .and()
-                .withUser("admin")
-                .password("admin")
-                .roles("ADMIN")
+            .withUser("user")
+            .password("user")
+            .roles("USER")
+            .and()
+            .withUser("admin")
+            .password("admin")
+            .roles("ADMIN")
     }
 
     @Bean
@@ -33,14 +33,14 @@ class SecurityConfiguration : WebSecurityConfigurerAdapter() {
     @Throws(Exception::class)
     override fun configure(http: HttpSecurity) {
         http.httpBasic().and()
-                .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/employees").hasRole("ADMIN")
-                .antMatchers(HttpMethod.DELETE, "/employees/**").hasRole("ADMIN")
-                .antMatchers(HttpMethod.PUT, "/employees/**").hasRole("ADMIN")
-//                .antMatchers(HttpMethod.PATCH, "/employees/**").hasRole("ADMIN")
-                .antMatchers("/actuator/**").permitAll()
-                .antMatchers("/").permitAll()
-                .and()
-                .csrf().disable()
+            .authorizeRequests()
+            .antMatchers(HttpMethod.POST, "/employees").hasRole("ADMIN")
+            .antMatchers(HttpMethod.DELETE, "/employees/**").hasRole("ADMIN")
+            .antMatchers(HttpMethod.PUT, "/employees/**").hasRole("ADMIN")
+            .antMatchers(HttpMethod.PATCH, "/employees/**").hasRole("ADMIN")
+            .antMatchers("/actuator/**").permitAll()
+            .antMatchers("/").permitAll()
+            .and()
+            .csrf().disable()
     }
 }
