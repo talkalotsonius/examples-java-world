@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	id("org.springframework.boot")
-	id("io.spring.dependency-management") version "1.0.11.RELEASE"
+	id("io.spring.dependency-management")
 	id("jacoco")
 	kotlin("jvm")
 	// kotlin-spring is a wrapper on top of all-open - https://kotlinlang.org/docs/all-open-plugin.html#spring-support
@@ -22,37 +22,21 @@ repositories {
 dependencies {
 	implementation(Spring.boot.data.jpa)
 	implementation(Spring.boot.web)
-	implementation(Spring.boot.webflux)
-
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
-	implementation(Spring.boot.thymeleaf)
-
-	// Used for parsing csv with the jackson-dataformater
-	// Version managed through spring boot
-	implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-csv:_")
+	implementation(Spring.boot.security)
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin:_")
-
-	// Used for gradle build scripts for kotlin
-	implementation(Spring.reactor.kotlin)
 	implementation("org.jetbrains.kotlin:kotlin-reflect:_")
 	implementation(Kotlin.stdlib.jdk8)
-	implementation(KotlinX.coroutines.reactor)
-
-	//Open API docs for Kotlin
-	implementation("org.springdoc:springdoc-openapi-data-rest:_")
-	implementation("org.springdoc:springdoc-openapi-ui:_")
-	implementation("org.springdoc:springdoc-openapi-kotlin:_")
-	developmentOnly(Spring.boot.devTools)
-
-	//H2 database
-	runtimeOnly("com.h2database:h2:_")
+	runtimeOnly("org.postgresql:postgresql:_")
 	testImplementation(Spring.boot.test)
-	testImplementation(Spring.reactor.test)
-
-	//Mockk library for testing
-	testImplementation(Testing.mockK)
-	implementation("com.ninja-squad:springmockk:_")
+	implementation("org.flywaydb:flyway-core:_")
+	// Spring Boot Actuator for Monitoring
+	implementation(Spring.boot.actuator)
+	// Prometheus endpoint extension for Actuator
+	implementation("io.micrometer:micrometer-registry-prometheus:_")
+	// Test frameworks
 	testImplementation(Testing.mockito.kotlin)
+	testImplementation("com.h2database:h2:_")
+//	testImplementation("com.github.javafaker:javafaker:_")
 }
 
 jacoco {
@@ -62,25 +46,51 @@ jacoco {
 
 tasks {
 
+	val extraTestsMatcher = "package/path/to/test/*.class"
+	val extraTest = register<Test>("extraTest") {
+		include(extraTestsMatcher)
+		useJUnitPlatform {}
+	}
+
+	build {
+		dependsOn(extraTest)
+	}
+
 	test {
+		exclude(extraTestsMatcher)
 		finalizedBy(jacocoTestReport)
+		useJUnitPlatform {}
+	}
+
+	jacocoTestCoverageVerification {
+		violationRules {
+			rule { limit { minimum = BigDecimal.valueOf(0.0) } }
+			rule {
+				enabled = false
+				element = "CLASS"
+				includes = listOf("org.gradle.*")
+
+				limit {
+					counter = "LINE"
+					value = "TOTALCOUNT"
+					maximum = "0.3".toBigDecimal()
+				}
+			}
+		}
 	}
 
 	jacocoTestReport {
 		dependsOn(test)
-	}
-
-	jacocoTestReport {
 		reports {
 			xml.required = true
 			csv.required = false
 			html.outputLocation = layout.buildDirectory.dir("jacocoHtml")
 		}
 	}
-}
 
-tasks.withType<Test> {
-	useJUnitPlatform()
+	check {
+		dependsOn(jacocoTestCoverageVerification)
+	}
 }
 
 tasks.withType<KotlinCompile> {
