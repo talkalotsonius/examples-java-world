@@ -1,4 +1,4 @@
-## Kotlin /w Spring Boot Inventory
+## Kotlin /w Spring Boot Inventory CSV managed API using testing coverage with JaCoCo
 REST API that accepts CSV-formatted inventory lists with (discount) prices as an input and
 returns the inventory list with current and previous prices of the inventory.
 
