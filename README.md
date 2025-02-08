@@ -9,19 +9,23 @@ Last successfully built using maven Version `3.9.9`, or gradle Version `8.12.1`.
 * [java-spring-boot-annotations](./java-spring-boot-annotations/README.md), using maven
 * [kotlin-null-safety](./kotlin-null-safety/README.md), using gradle
 * [kotlin-spring-boot-api-boilerplate](kotlin-spring-boot-api-boilerplate/README.md), using gradle
-* [spring-boot-feature](./spring-boot-feature/README.md), using gradle
-* [spring-boot-inventory](./spring-boot-inventory/README.md), using gradle
-* [spring-boot-kotlin](./spring-boot-kotlin/README.md), using gradle
-* [spring-boot-mobility](./spring-boot-mobility/README.md), using gradle
-* [spring-boot-power](./spring-boot-power/README.md), using gradle
+* [kotlin-spring-boot-feature-testing-restassured](./kotlin-spring-boot-feature-testing-restassured/README.md), using gradle
+* [kotlin-spring-boot-inventory-testcoverage-jacoco](./kotlin-spring-boot-inventory-testcoverage-jacoco/README.md), using gradle
+* [kotlin-spring-boot-employee-jvm-monitoring](./kotlin-spring-boot-employee-jvm-monitoring/README.md), using gradle and Docker
+* [spring-boot-mobility](./spring-boot-mobility/README.md), using gradle and Docker
+* [spring-boot-power](./spring-boot-power/README.md), using gradle and Docker
 * [spring-boot-schedule](./spring-boot-schedule/README.md), using gradle
 * [spring-boot-weather](./spring-boot-weather/README.md), using gradle
 
 ## General installation instructions
 ### Requirements
-* Docker
-* renovate bot
+* Java 21
+* Kotlin 2.1 and above
 * maven and gradle
+
+### Optional requirements
+* Docker 27.5 and above
+* renovate bot
 
 ## Reference Documentation
 For further reference, please consider the following sections:
