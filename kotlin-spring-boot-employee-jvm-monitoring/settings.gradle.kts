@@ -1,4 +1,4 @@
-rootProject.name = "spring-boot-kotlin"
+rootProject.name = "kotlin-spring-boot-employee-jvm-monitoring"
 
 plugins {
     // See https://jmfayard.github.io/refreshVersions
