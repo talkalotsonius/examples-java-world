@@ -1,4 +1,4 @@
-rootProject.name = "kotlin-spring-boot-inventory"
+rootProject.name = "kotlin-spring-boot-inventory-testcoverage-jacoco"
 
 plugins {
     // See https://jmfayard.github.io/refreshVersions
